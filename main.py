@@ -6,11 +6,17 @@ from script.knn import knn
 
 
 def main():
-    decision_tree()
-    knn()
-    neural_net()
-    svm()
-    boosting()
+    algs = [decision_tree(),
+            knn(),
+            neural_net(),
+            svm(),
+            boosting()]
+
+    for alg in algs:
+        try:
+            alg
+        except RuntimeError as e:
+            print(e)
 
 
 if __name__ == '__main__':
